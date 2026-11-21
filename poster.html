@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SYLVAINE — a travel poster for a place that isn't there</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 1024px; height: 1024px; background: #0d2137; overflow: hidden; }
+  svg { display: block; width: 1024px; height: 1024px; }
+</style>
+</head>
+<body>
+<!--
+  SYLVAINE — an original travel poster, drawn as inline SVG in this file.
+  Concept: a village in the treetops of an endless forest at blue hour.
+  One landmark (the Great Tree with its lit treehouses), warm dusk light
+  breaking through the canopy, fireflies, mist. The place name is the only
+  copy on the poster, set large in the sky so it is legible at any size.
+  Everything here is hand-placed; no image assets, no external resources.
+-->
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1e33"/>
+      <stop offset="0.34" stop-color="#123a4e"/>
+      <stop offset="0.55" stop-color="#1d5a55"/>
+      <stop offset="0.64" stop-color="#2a6f6b"/>
+      <stop offset="0.70" stop-color="#a87f3e"/>
+      <stop offset="0.76" stop-color="#d99a4e"/>
+      <stop offset="0.82" stop-color="#7a5c34"/>
+      <stop offset="1" stop-color="#12251e"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe6b0" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffc46b" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floorFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#020d08" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#020d08" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#020d08"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe8dd" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#cfe8dd" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#cfe8dd" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pathGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf7d" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#ffcf7d" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1024" height="1024" fill="url(#sky)"/>
+
+  <!-- stars in the upper sky -->
+  <g fill="#eaf4ff">
+    <circle cx="90" cy="70" r="1.8" opacity="0.8"/><circle cx="210" cy="150" r="1.4" opacity="0.6"/>
+    <circle cx="330" cy="60" r="1.6" opacity="0.7"/><circle cx="470" cy="120" r="1.2" opacity="0.5"/>
+    <circle cx="620" cy="52" r="1.8" opacity="0.8"/><circle cx="760" cy="140" r="1.3" opacity="0.55"/>
+    <circle cx="880" cy="66" r="1.7" opacity="0.75"/><circle cx="960" cy="180" r="1.2" opacity="0.5"/>
+    <circle cx="150" cy="230" r="1.2" opacity="0.45"/><circle cx="560" cy="200" r="1.4" opacity="0.5"/>
+    <circle cx="830" cy="240" r="1.2" opacity="0.45"/><circle cx="60" cy="300" r="1.3" opacity="0.4"/>
+  </g>
+
+  <!-- birds -->
+  <g stroke="#0b1e33" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85">
+    <path d="M 250 250 q 10 -10 20 0 q 10 -10 20 0"/>
+    <path d="M 700 210 q 8 -8 16 0 q 8 -8 16 0"/>
+    <path d="M 800 280 q 7 -7 14 0 q 7 -7 14 0"/>
+  </g>
+
+  <!-- low sun, half-hidden behind the far trees -->
+  <circle cx="712" cy="618" r="130" fill="url(#sunGlow)"/>
+  <circle cx="712" cy="618" r="34" fill="#ffdf9e" opacity="0.95"/>
+
+  <!-- far tree line: misty teal silhouettes -->
+  <g fill="#2a6f6b" opacity="0.55">
+    <path d="M0 700 L0 640 L40 560 L80 640 L120 600 L160 700 Z"/>
+    <path d="M120 700 L150 600 L190 520 L230 600 L260 700 Z"/>
+    <path d="M830 700 L860 590 L900 510 L940 590 L970 700 Z"/>
+    <path d="M930 700 L960 620 L990 560 L1024 620 L1024 700 Z"/>
+    <ellipse cx="300" cy="640" rx="90" ry="46"/>
+    <ellipse cx="560" cy="660" rx="110" ry="50"/>
+    <ellipse cx="820" cy="650" rx="80" ry="42"/>
+    <path d="M380 700 L410 610 L440 540 L470 610 L500 700 Z"/>
+    <path d="M620 700 L650 620 L680 550 L710 620 L740 700 Z"/>
+    <ellipse cx="140" cy="680" rx="80" ry="40"/>
+    <ellipse cx="940" cy="680" rx="80" ry="40"/>
+  </g>
+
+  <!-- mid tree line: deep green -->
+  <g fill="#0f3d2e">
+    <path d="M60 800 L90 660 L130 560 L170 660 L200 800 Z"/>
+    <path d="M180 800 L230 620 L280 500 L330 620 L360 800 Z"/>
+    <ellipse cx="640" cy="700" rx="120" ry="60"/>
+    <ellipse cx="880" cy="720" rx="110" ry="58"/>
+    <path d="M900 800 L940 640 L980 540 L1010 640 L1024 800 Z"/>
+    <path d="M380 800 L410 660 L450 560 L490 660 L510 800 Z"/>
+    <path d="M660 800 L700 670 L740 570 L780 670 L800 800 Z"/>
+  </g>
+
+  <!-- mist bands -->
+  <rect x="0" y="600" width="1024" height="120" fill="url(#mist)"/>
+  <rect x="0" y="740" width="1024" height="130" fill="url(#mist)" opacity="0.8"/>
+
+  <!-- forest floor: a slow fade from the dusk glow into darkness, no hard edge -->
+  <rect x="0" y="740" width="1024" height="284" fill="url(#floorFade)"/>
+  <!-- warm path of light leading to the Great Tree -->
+  <ellipse cx="512" cy="1024" rx="240" ry="130" fill="#ffcf7d" opacity="0.10" filter="url(#soft)"/>
+
+  <!-- THE GREAT TREE: trunk + branches -->
+  <g fill="#07231a">
+    <path d="M 396 1024 L 410 760 L 400 560 L 418 420 L 442 420 L 434 560 L 448 760 L 462 1024 Z"/>
+    <path d="M 420 520 L 312 442 L 304 454 L 410 556 Z"/>
+    <path d="M 436 500 L 556 414 L 564 426 L 446 538 Z"/>
+    <path d="M 414 620 L 310 540 L 304 552 L 408 652 Z"/>
+    <path d="M 442 600 L 566 530 L 572 542 L 448 632 Z"/>
+  </g>
+  <!-- great canopy: layered blobs -->
+  <g fill="#0a2e22">
+    <circle cx="430" cy="330" r="150"/>
+    <circle cx="320" cy="380" r="100"/>
+    <circle cx="540" cy="370" r="105"/>
+    <circle cx="430" cy="240" r="110"/>
+    <circle cx="250" cy="470" r="70"/>
+    <circle cx="600" cy="460" r="75"/>
+  </g>
+  <g fill="#14532d" opacity="0.55">
+    <circle cx="380" cy="280" r="60"/>
+    <circle cx="500" cy="300" r="55"/>
+    <circle cx="430" cy="210" r="50"/>
+  </g>
+
+  <!-- treehouses in the canopy: dark cabins, warm lit windows -->
+  <g>
+    <g>
+      <rect x="338" y="330" width="46" height="34" fill="#160f06"/>
+      <path d="M 332 332 L 361 310 L 390 332 Z" fill="#0d0903"/>
+      <rect x="348" y="340" width="10" height="12" fill="#ffd28a"/>
+      <rect x="364" y="340" width="10" height="12" fill="#ffd28a"/>
+    </g>
+    <g>
+      <rect x="452" y="286" width="52" height="38" fill="#160f06"/>
+      <path d="M 446 288 L 478 264 L 510 288 Z" fill="#0d0903"/>
+      <rect x="463" y="297" width="11" height="13" fill="#ffd28a"/>
+      <rect x="481" y="297" width="11" height="13" fill="#ffd28a"/>
+    </g>
+    <g>
+      <rect x="516" y="352" width="42" height="32" fill="#160f06"/>
+      <path d="M 511 354 L 537 334 L 563 354 Z" fill="#0d0903"/>
+      <rect x="526" y="362" width="10" height="12" fill="#ffd28a"/>
+      <rect x="542" y="362" width="10" height="12" fill="#ffd28a"/>
+    </g>
+    <g>
+      <rect x="288" y="412" width="40" height="30" fill="#160f06"/>
+      <path d="M 283 414 L 308 396 L 333 414 Z" fill="#0d0903"/>
+      <rect x="298" y="422" width="9" height="11" fill="#ffd28a"/>
+      <rect x="312" y="422" width="9" height="11" fill="#ffd28a"/>
+    </g>
+    <g>
+      <rect x="560" y="420" width="38" height="28" fill="#160f06"/>
+      <path d="M 555 422 L 579 405 L 603 422 Z" fill="#0d0903"/>
+      <rect x="570" y="430" width="9" height="11" fill="#ffd28a"/>
+      <rect x="584" y="430" width="9" height="11" fill="#ffd28a"/>
+    </g>
+  </g>
+  <!-- rope bridges between the houses -->
+  <g stroke="#d9a441" stroke-width="2" fill="none" opacity="0.65" stroke-linecap="round">
+    <path d="M 384 352 Q 420 372 452 322"/>
+    <path d="M 504 320 Q 520 348 516 368"/>
+    <path d="M 338 356 Q 310 396 296 420"/>
+    <path d="M 520 386 Q 556 404 568 428"/>
+  </g>
+  <!-- window glow -->
+  <g fill="#ffd28a" opacity="0.35" filter="url(#soft)">
+    <circle cx="361" cy="346" r="18"/>
+    <circle cx="478" cy="303" r="20"/>
+    <circle cx="537" cy="368" r="16"/>
+  </g>
+
+  <!-- near framing trees: very dark, left and right edges -->
+  <g fill="#04160f">
+    <path d="M 0 1024 L 0 300 L 34 200 L 60 300 L 78 1024 Z"/>
+    <path d="M 0 420 L 90 340 L 100 360 L 20 460 Z"/>
+    <circle cx="30" cy="220" r="80"/>
+    <circle cx="80" cy="300" r="60"/>
+    <path d="M 1024 1024 L 1024 340 L 990 240 L 964 340 L 950 1024 Z"/>
+    <path d="M 1024 460 L 940 380 L 930 400 L 1004 500 Z"/>
+    <circle cx="994" cy="260" r="75"/>
+    <circle cx="950" cy="330" r="55"/>
+  </g>
+
+  <!-- fireflies -->
+  <g fill="#ffcf7d">
+    <circle cx="180" cy="700" r="3" opacity="0.9"/><circle cx="230" cy="760" r="2.4" opacity="0.7"/>
+    <circle cx="300" cy="690" r="2.8" opacity="0.85"/><circle cx="350" cy="800" r="2.2" opacity="0.6"/>
+    <circle cx="620" cy="720" r="3" opacity="0.9"/><circle cx="680" cy="780" r="2.4" opacity="0.7"/>
+    <circle cx="760" cy="700" r="2.8" opacity="0.85"/><circle cx="820" cy="770" r="2.2" opacity="0.6"/>
+    <circle cx="140" cy="820" r="2.6" opacity="0.75"/><circle cx="900" cy="820" r="2.6" opacity="0.75"/>
+    <circle cx="480" cy="740" r="2.2" opacity="0.6"/><circle cx="560" cy="800" r="2.8" opacity="0.8"/>
+    <circle cx="250" cy="640" r="2" opacity="0.55"/><circle cx="860" cy="640" r="2" opacity="0.55"/>
+    <circle cx="700" cy="840" r="2.4" opacity="0.7"/><circle cx="110" cy="740" r="2" opacity="0.5"/>
+    <circle cx="940" cy="720" r="2.2" opacity="0.6"/><circle cx="420" cy="820" r="2.4" opacity="0.7"/>
+  </g>
+  <g fill="#ffcf7d" opacity="0.3" filter="url(#soft)">
+    <circle cx="180" cy="700" r="10"/><circle cx="620" cy="720" r="10"/>
+    <circle cx="760" cy="700" r="9"/><circle cx="300" cy="690" r="9"/>
+  </g>
+
+  <!-- the name: the only copy on the poster -->
+  <text x="512" y="132" text-anchor="middle"
+        font-family="'Noto Serif', Georgia, serif" font-size="92" font-weight="700"
+        letter-spacing="22" fill="#f7ead0">SYLVAINE</text>
+  <line x1="362" y1="168" x2="662" y2="168" stroke="#d9a441" stroke-width="2.5" opacity="0.85"/>
+</svg>
+</body>
+</html>
